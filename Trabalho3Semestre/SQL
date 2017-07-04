@@ -1,0 +1,89 @@
+CREATE TABLE produto(
+	id_produto SERIAL,
+	nome VARCHAR(255),
+	valor NUMERIC(12,2)
+	quantidade INTEGER,
+	PRIMARY KEY(id_produto)
+);
+
+
+CREATE TABLE cliente(
+	id SERIAL,
+	nome VARCHAR(255),
+	idade INTEGER,
+	cpf VARCHAR(255)
+	PRIMARY KEY(id)
+);
+
+
+
+CREATE TABLE orcamento (
+  id_orcamento serial,
+  id_cliente INTEGER NOT NULL,
+  descricao VARCHAR(255) NULL,
+  PRIMARY KEY(id_orcamento),
+  FOREIGN KEY(id_cliente)
+    REFERENCES cliente(id)
+);
+
+CREATE TABLE produto_orcamento (
+  id_produto INTEGER NOT NULL,
+  id_orcamento INTEGER NOT NULL,
+  quantidade INTEGER,
+  PRIMARY KEY(id_produto, id_orcamento),
+  FOREIGN KEY(id_produto)
+    REFERENCES produto(id_produto),
+  FOREIGN KEY(id_orcamento)
+    REFERENCES orcamento(id_orcamento)
+);
+
+insert into cliente (id, nome, idade, cpf) values (1, 'Von Shew', 2003, '588-48-4427');
+insert into cliente (id, nome, idade, cpf) values (2, 'Brittney Egglestone', 2008, '563-21-7900');
+insert into cliente (id, nome, idade, cpf) values (3, 'Jessee Enrdigo', 1995, '372-84-5844');
+insert into cliente (id, nome, idade, cpf) values (4, 'Belinda Pley', 1994, '980-83-1351');
+insert into cliente (id, nome, idade, cpf) values (5, 'Johny Cisland', 1991, '867-13-1715');
+insert into cliente (id, nome, idade, cpf) values (6, 'Vittoria Guynemer', 1989, '374-79-0924');
+insert into cliente (id, nome, idade, cpf) values (7, 'Keen Rainville', 1995, '933-37-1308');
+insert into cliente (id, nome, idade, cpf) values (8, 'Irwinn Wellstead', 2010, '730-24-2252');
+insert into cliente (id, nome, idade, cpf) values (9, 'Tomaso Massimi', 1989, '533-20-3962');
+insert into cliente (id, nome, idade, cpf) values (10, 'Trumann Morling', 2006, '859-01-0845');
+insert into cliente (id, nome, idade, cpf) values (11, 'Werner Jzhakov', 2005, '171-88-7412');
+insert into cliente (id, nome, idade, cpf) values (12, 'Lexis McDonand', 1994, '615-71-9699');
+insert into cliente (id, nome, idade, cpf) values (13, 'Elinor Girod', 2012, '717-63-3869');
+insert into cliente (id, nome, idade, cpf) values (14, 'Rory Meldrum', 1998, '521-13-4465');
+insert into cliente (id, nome, idade, cpf) values (15, 'Adamo Guinan', 1992, '724-59-3106');
+insert into cliente (id, nome, idade, cpf) values (16, 'Leroy Eblein', 2012, '915-44-4546');
+insert into cliente (id, nome, idade, cpf) values (17, 'Brod Soppit', 1977, '143-50-2805');
+insert into cliente (id, nome, idade, cpf) values (18, 'Terri-jo Applewhite', 2002, '358-72-4682');
+insert into cliente (id, nome, idade, cpf) values (19, 'Eydie Stoop', 2013, '991-87-9544');
+insert into cliente (id, nome, idade, cpf) values (20, 'Stanislas Scutt', 1998, '427-62-9400');
+insert into cliente (id, nome, idade, cpf) values (21, 'Kathy Laste', 2006, '320-33-2566');
+insert into cliente (id, nome, idade, cpf) values (22, 'Antoinette Tather', 2005, '433-51-2303');
+insert into cliente (id, nome, idade, cpf) values (23, 'Pattie Harte', 1987, '779-71-6401');
+insert into cliente (id, nome, idade, cpf) values (24, 'Roland Baroux', 1987, '373-58-8013');
+insert into cliente (id, nome, idade, cpf) values (25, 'Dodie Kleinsmuntz', 1987, '363-32-3998');
+insert into cliente (id, nome, idade, cpf) values (26, 'Brandy Chainey', 1987, '348-78-1429');
+insert into cliente (id, nome, idade, cpf) values (27, 'Merci Morehall', 1999, '987-61-9844');
+insert into cliente (id, nome, idade, cpf) values (28, 'Nissy Gash', 1994, '717-36-0546');
+insert into cliente (id, nome, idade, cpf) values (29, 'Adlai Darrigoe', 1993, '197-64-5187');
+insert into cliente (id, nome, idade, cpf) values (30, 'Shirline Mathews', 2009, '830-47-2284');
+insert into cliente (id, nome, idade, cpf) values (31, 'Nappy Glassman', 2008, '397-06-5028');
+insert into cliente (id, nome, idade, cpf) values (32, 'Chalmers Anthony', 2011, '857-43-2430');
+insert into cliente (id, nome, idade, cpf) values (33, 'Sullivan Whittuck', 2011, '553-29-8050');
+insert into cliente (id, nome, idade, cpf) values (34, 'Tiffany Arent', 2010, '453-43-7229');
+insert into cliente (id, nome, idade, cpf) values (35, 'Linell Raffles', 2008, '934-04-1123');
+insert into cliente (id, nome, idade, cpf) values (36, 'Haleigh Leadbitter', 2008, '967-35-3001');
+insert into cliente (id, nome, idade, cpf) values (37, 'Gordon Hargrave', 2008, '949-99-5819');
+insert into cliente (id, nome, idade, cpf) values (38, 'Ode Stapleton', 2011, '396-74-4246');
+insert into cliente (id, nome, idade, cpf) values (39, 'Gianna Wickes', 2006, '259-87-6774');
+insert into cliente (id, nome, idade, cpf) values (40, 'Codi Goodby', 2002, '424-53-8840');
+insert into cliente (id, nome, idade, cpf) values (41, 'Gabie Cicconettii', 2011, '680-21-9333');
+insert into cliente (id, nome, idade, cpf) values (42, 'Adolphus Cleevely', 2012, '460-64-1444');
+insert into cliente (id, nome, idade, cpf) values (43, 'Johan Castard', 1998, '493-17-1267');
+insert into cliente (id, nome, idade, cpf) values (44, 'Madel Loud', 2005, '406-40-2049');
+insert into cliente (id, nome, idade, cpf) values (45, 'Corbet Shurey', 1968, '707-30-3456');
+insert into cliente (id, nome, idade, cpf) values (46, 'Bondy Grahlman', 2001, '658-32-5222');
+insert into cliente (id, nome, idade, cpf) values (47, 'Deeanne Rapi', 2012, '526-54-7338');
+insert into cliente (id, nome, idade, cpf) values (48, 'Glen Haps', 2009, '941-99-9284');
+insert into cliente (id, nome, idade, cpf) values (49, 'Benedetta Solomon', 2000, '493-26-4545');
+insert into cliente (id, nome, idade, cpf) values (50, 'Ced Lucien', 1987, '364-82-9984');
